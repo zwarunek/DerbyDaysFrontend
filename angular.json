@@ -27,7 +27,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/primeng/resources/primeng.css",
+              "./node_modules/primeflex/primeflex.css",
+              "./node_modules/primeng/resources/themes/bootstrap4-dark-blue/theme.css"
             ],
             "scripts": []
           },
@@ -68,10 +71,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "DerbyDaysFrontend:build:production"
+              "browserTarget": "DerbyDaysFrontend:build:production",
+              "proxyConfig": "./proxy-prod.conf.json"
             },
             "development": {
-              "browserTarget": "DerbyDaysFrontend:build:development"
+              "browserTarget": "DerbyDaysFrontend:build:development",
+              "proxyConfig": "./proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -97,6 +102,12 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "noBuild": true
           }
         }
       }
