@@ -26,11 +26,12 @@ export class DonationsComponent implements OnInit {
       console.log(this.donations)
     })
     homeService.getinfo().subscribe((value) => {
+      console.log('this.goal, this.startDate, this.venmoUsername')
       this.goal = value.body.goal
       this.startDate = new Date(value.body.startDate)
       this.venmoUsername = value.body.venmoUsername
-      console.log(this.goal, this.startDate, this.venmoUsername)
     })
+    console.log(`http://localhost:4200/api/user/donations`)
   }
 
   ngOnInit(): void {

@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://derbydayszta.herokuapp.com/",
+    "target": "https://dd.zacharywarunek.com",
     "secure": true,
     "changeOrigin": true,
     "pathRewrite": {
