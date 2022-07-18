@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeadersComponent } from './headers.component';
 import {MenubarModule} from "primeng/menubar";
 import {SharedModule} from "primeng/api";
+import {ButtonModule} from "primeng/button";
 
 
 
@@ -16,7 +17,8 @@ import {SharedModule} from "primeng/api";
   imports: [
     CommonModule,
     MenubarModule,
-    SharedModule
+    SharedModule,
+    ButtonModule
   ]
 })
 export class HeadersModule { }

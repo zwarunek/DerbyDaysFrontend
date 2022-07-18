@@ -1,0 +1,18 @@
+<div class="w-full flex justify-content-center" style="font-size: 40px; color: white">
+  <button pButton label="Get Notified" icon="pi pi-bell" (click)="showDialog()" style="font-size: 20px; width: 150px"
+          class="p-button-danger"></button>
+</div>
+<p-dialog header="Donate" [(visible)]="displayNotify" [draggable]="false" [modal]="true" [style]="{width: '400px'}">
+  <div class="flex flex-column w-8 justify-content-center align-items-center">
+    <span class="p-float-label">
+            <p-inputMask id="phone" class="mb-2" mask="+1 (999) 999-9999"
+                         [(ngModel)]="phone"></p-inputMask>
+            <label for="phone">Phone Number</label>
+        </span>
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-times" (click)="displayNotify=false" label="Cancel" styleClass="p-button-text"></p-button>
+    <p-button icon="pi pi-check" [formGroup]="format" type="submit" (click)="displayNotify=false; onClickSubmit()"
+              label="Sign Up" styleClass="p-button"></p-button>
+  </ng-template>
+</p-dialog>

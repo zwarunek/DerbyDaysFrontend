@@ -1,0 +1,8 @@
+<div class="w-full flex justify-content-center" style="font-size: 40px; color: white">
+  <button pButton label="Donate" (click)="showDialog()" style="font-size: 20px; width: 150px" class="p-button-success"></button>
+</div>
+<p-dialog header="Donate" [(visible)]="displayDonate" [draggable]="false" [modal]="true" [style]="{width: '400px'}">
+  <div style="background-color: #ffffff; border-radius: 5px">
+    <img src="assets/MyVenmoQRCode.png" style="width: 100%">
+  </div>
+</p-dialog>

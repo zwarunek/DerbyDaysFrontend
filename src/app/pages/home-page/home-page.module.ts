@@ -5,6 +5,7 @@ import { HomePageRoutingModule } from './home-page-routing.module';
 import { HomePageComponent } from './home-page.component';
 import {HeadersModule} from "../../features/headers/headers.module";
 import {HomeModule} from "../../features/home/home.module";
+import {NotificationsModule} from "../../features/home/notifications/notifications.module";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {HomeModule} from "../../features/home/home.module";
     CommonModule,
     HomePageRoutingModule,
     HeadersModule,
-    HomeModule
+    HomeModule,
+    NotificationsModule
   ]
 })
 export class HomePageModule { }

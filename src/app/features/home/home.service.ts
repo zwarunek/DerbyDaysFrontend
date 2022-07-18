@@ -22,5 +22,9 @@ export class HomeService {
     // @ts-ignore
     return this.http.get(`http://localhost:4200/api/user/info`, httpOptions)
   }
+  donate(body: any): any {
+    // @ts-ignore
+    return this.http.post(`http://localhost:4200/api/user/donate`, body, httpOptions)
+  }
 
 }

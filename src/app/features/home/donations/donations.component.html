@@ -1,4 +1,4 @@
-<div class="w-full h-full" style="font-size: 40px; color: white">
+<div class="w-full" style="font-size: 40px; color: white">
   <div class="flex flex-row justify-content-between">
     <span>{{currentDonations | currency:'USD':'$' }}</span>
     <span>{{goal | currency:'USD':'$' }}</span>
@@ -6,16 +6,20 @@
   <div class="mb-5">
     <p-progressBar value="{{(currentDonations/goal)*100 | number: '1.2-2'}}" showValue="false"></p-progressBar>
   </div>
-  <div *ngFor="let donation of donations" class="w-full p-3 mb-2 flex flex-row" style="border-radius: 5px; background-color: var(--surface-d); ">
-    <img class="mr-4" src="{{donation.profile_picture_url}}" width="75" height="75" style="; border-radius: 5px">
-    <div class="flex flex-row w-full justify-content-between">
-      <div class="flex flex-column">
-        <span style="font-size: 30px; font-weight: bold">{{donation.name}}</span>
-        <span style="font-size: 20px; font-weight: lighter">{{donation.note}}</span>
+  <p-virtualScroller [value]="donations" scrollHeight="500px" [itemSize]="100">
+    <ng-template let-donation pTemplate="item" let-i="index">
+      <div class="w-full p-3 mb-2 flex flex-row" style="border-radius: 5px; background-color: var(--surface-d); ">
+        <img class="mr-4" src="{{donation.profile_picture_url}}" width="75" height="75" style="; border-radius: 5px">
+        <div class="flex flex-row w-full justify-content-between">
+          <div class="flex flex-column">
+            <span style="font-size: 30px; font-weight: bold">{{donation.name}}</span>
+            <span style="font-size: 20px; font-weight: lighter">{{donation.note}}</span>
+          </div>
+          <div style="font-size: 40px">
+            {{donation.amount | currency:'USD':'$' }}
+          </div>
+        </div>
       </div>
-      <div style="font-size: 40px">
-        {{donation.amount | currency:'USD':'$' }}
-      </div>
-    </div>
-  </div>
+    </ng-template>
+  </p-virtualScroller>
 </div>
