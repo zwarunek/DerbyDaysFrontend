@@ -21,7 +21,9 @@ export class NotificationsComponent implements OnInit {
   }
 
   onClickSubmit() {
-    console.log(this.phone);
+    this.homeService.optIn(this.phone.replace(/\D/g,'')).subscribe((value) => {
+      console.log(value.body);
+    });
   }
 
   showDialog() {

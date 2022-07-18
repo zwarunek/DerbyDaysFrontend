@@ -24,5 +24,11 @@ export class HomeService {
   donate(body: any): any {
     return this.http.post(environment.url + '/api/v1/user/donate', body, httpOptions)
   }
+  optIn(body: any): any {
+    return this.http.post(environment.url + '/api/v1/user/notification-opt-in', body, httpOptions)
+  }
+  optOut(body: any): any {
+    return this.http.post(environment.url + '/api/v1/user/donate', body, httpOptions)
+  }
 
 }
