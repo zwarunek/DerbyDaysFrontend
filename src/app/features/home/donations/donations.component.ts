@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HomeService} from "../home.service";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-donations',
@@ -31,7 +32,8 @@ export class DonationsComponent implements OnInit {
       this.startDate = new Date(value.body.startDate)
       this.venmoUsername = value.body.venmoUsername
     })
-    console.log(`http://localhost:4200/api/user/donations`)
+
+    console.log(environment.url + '/api/v1/user/donations')
   }
 
   ngOnInit(): void {

@@ -72,12 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "DerbyDaysFrontend:build:production",
-              "proxyConfig": "./proxy-prod.conf.json"
+              "browserTarget": "DerbyDaysFrontend:build:production"
             },
             "development": {
-              "browserTarget": "DerbyDaysFrontend:build:development",
-              "proxyConfig": "./proxy.conf.json"
+              "browserTarget": "DerbyDaysFrontend:build:development"
             }
           },
           "defaultConfiguration": "development"

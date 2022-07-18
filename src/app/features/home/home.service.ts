@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {environment} from "../../../environments/environment";
 
 const httpOptions: any = {
   headers: new HttpHeaders({
@@ -15,13 +16,13 @@ export class HomeService {
 
   constructor(private http: HttpClient) { }
   getDonations(): any {
-    return this.http.get(`http://localhost:4200/api/user/donations`, httpOptions)
+    return this.http.get(environment.url + '/api/v1/user/donations', httpOptions)
   }
   getinfo(): any {
-    return this.http.get(`http://localhost:4200/api/user/info`, httpOptions)
+    return this.http.get(environment.url + '/api/v1/user/info', httpOptions)
   }
   donate(body: any): any {
-    return this.http.post(`http://localhost:4200/api/user/donate`, body, httpOptions)
+    return this.http.post(environment.url + '/api/v1/user/donate', body, httpOptions)
   }
 
 }

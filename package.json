@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --base-href=https://zwarunek.github.io/DerbyDaysFrontend/ && ng deploy"
+    "deploy": "ng build --base-href=https://zta.zacharywarunek.com/ && ng deploy"
   },
   "private": true,
   "dependencies": {
